@@ -1,0 +1,1310 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+
+<head>
+
+<style>
+
+@import url(https://fonts.googleapis.com/css?family=PT+Sans:400,700);
+
+body{
+  background: #fece46;
+  max-width: 900px;
+  margin: 0px auto;
+  font-family: 'PT Sans', sans-serif;
+  color:#4e4b4a;
+}
+
+#container{
+  position: relative;
+}
+
+#sections{
+  width: 340px;
+opacity:0;
+}
+
+#sections > div{
+
+  background: #fece46;
+/*  opacity: .2;
+margin-bottom: 200px;
+*/
+margin-bottom: 350px;
+}
+
+#sections > div:last-child{
+ margin-bottom: 50px;
+  /*  margin-bottom: 30px; */
+}
+
+/*
+#sections > div.graph-scroll-active{
+  opacity: 1;
+}
+*/
+
+#graph{
+  margin-left: 40px;
+  width: 900px;
+  /*position: absolute;*/
+  position: sticky;
+  top: 0px;
+ /* margin-left: 380px;*/
+ float: left;
+}
+
+/*
+.graph-scroll-fixed #graph{
+  position: fixed;
+  top: 0px;
+}
+
+.graph-scroll-below #graph{
+  bottom: 0px;
+  top: auto;
+}
+*/
+
+@media (max-width: 925px)  {
+  #graph{
+    width: 100%;
+/*    transform: translate(-50%, 0);
+    margin-left: 50%;*/
+    margin-left: 0px;
+    float: left;
+  }
+
+  #sections{
+    position: relative;
+    margin: 0px auto;
+    width: auto;
+/*    padding-top: 400px; */
+opacity:0;
+  }
+
+  #sections div{
+    background: rgba(254,206,70,0.9); /* alpha parameter */
+    padding: 10px;
+    max-width: 400px;
+/*    margin-bottom: 500px;*/
+    margin-bottom: 80vh;
+
+  }
+}
+
+h1{
+  margin: 50px;
+}
+
+h1, h3, h4{
+  text-align: center;
+}
+
+/*
+svg{
+border: 1px solid black;
+}
+*/
+
+text {
+  font-family: 'PT Sans', sans-serif;
+        font-size: 15px;
+        fill: #3a403d;
+
+    }
+
+text.value {
+        fill: #3a403d;
+        opacity:1;
+    }
+
+text.title {
+/*  fill: #30b096;*/
+fill: #3a403d;
+          font-size:24px;
+          font-weight: bold;
+          line-height:26px;
+    }
+
+text.subtitle {
+/*  fill: #30b096;*/
+          fill: #3a403d;
+          font-size:20px;
+          font-weight: normal;
+          line-height:28px;
+    }
+
+text.footnote{
+  fill: #30b096;
+          font-size:12px;
+          font-weight: normal;
+     }
+
+
+
+a {
+  color: #4e4b4a;
+}
+
+.details{
+color:white;
+    }
+
+    img {
+    width: 900px;
+    height: auto;
+}
+
+
+</style>
+
+</head>
+
+<body>
+
+<!-- <h3>TITLE FOR DATA VISUALISATION</h3>
+
+<img src="images/grayscale_woman.jpg" >
+
+
+<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corrupti, quibusdam? Accusamus alias quas corrupti officiis neque suscipit soluta facere, culpa optio tenetur blanditiis reprehenderit necessitatibus ab, quam odit voluptatum sequi!</p>
+
+<p>Possimus, earum eveniet explicabo sunt labore voluptatibus facilis! Ipsam quae quisquam, blanditiis vel cumque a magni sunt. Sint qui excepturi a harum voluptates sed odit facere sunt non, itaque dicta?</p>
+
+<p>Dolores at saepe possimus doloribus ab autem! Veniam officia amet quod maiores repellat nemo sequi, ipsam magnam dicta repudiandae quasi. Quam inventore alias perspiciatis excepturi. Expedita ducimus delectus eaque iusto?</p>
+
+    <h4>&dArr; SCROLL DOWN TO BEGIN  &dArr;</h4> -->
+
+<div id='container'>
+<div id='graph'></div>
+  <div id='sections'>
+
+    <!-- SEC 1 -->
+        <div>
+
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsum cum nisi distinctio sit laudantium enim asperiores minima, officiis consequatur quam ipsam earum ullam magni? Adipisci dolores ea voluptatum harum nulla?</p>
+            <p>Voluptate ad saepe, ipsam, commodi nulla officia minus suscipit necessitatibus adipisci, fugit autem odio tempore placeat. Quod, possimus? Vero aliquam iste quidem pariatur eaque iusto laudantium minus obcaecati? A, quaerat?</p>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsum cum nisi distinctio sit laudantium enim asperiores minima, officiis consequatur quam ipsam earum ullam magni? Adipisci dolores ea voluptatum harum nulla?</p>
+            <p>Voluptate ad saepe, ipsam, commodi nulla officia minus suscipit necessitatibus adipisci, fugit autem odio tempore placeat. Quod, possimus? Vero aliquam iste quidem pariatur eaque iusto laudantium minus obcaecati? A, quaerat?</p>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsum cum nisi distinctio sit laudantium enim asperiores minima, officiis consequatur quam ipsam earum ullam magni? Adipisci dolores ea voluptatum harum nulla?</p>
+            <p>Voluptate ad saepe, ipsam, commodi nulla officia minus suscipit necessitatibus adipisci, fugit autem odio tempore placeat. Quod, possimus? Vero aliquam iste quidem pariatur eaque iusto laudantium minus obcaecati? A, quaerat?</p>
+
+        </div>
+
+    <!-- SEC 2 -->
+
+    <!-- code for making text bold <span style="font-weight:bold;">THE TEXT</span>  -->
+
+        <div>
+
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsum cum nisi distinctio sit laudantium enim asperiores minima, officiis consequatur quam ipsam earum ullam magni? Adipisci dolores ea voluptatum harum nulla?</p>
+            <p>Voluptate ad saepe, ipsam, commodi nulla officia minus suscipit necessitatibus adipisci, fugit autem odio tempore placeat. Quod, possimus? Vero aliquam iste quidem pariatur eaque iusto laudantium minus obcaecati? A, quaerat?</p>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsum cum nisi distinctio sit laudantium enim asperiores minima, officiis consequatur quam ipsam earum ullam magni? Adipisci dolores ea voluptatum harum nulla?</p>
+            <p>Voluptate ad saepe, ipsam, commodi nulla officia minus suscipit necessitatibus adipisci, fugit autem odio tempore placeat. Quod, possimus? Vero aliquam iste quidem pariatur eaque iusto laudantium minus obcaecati? A, quaerat?</p>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsum cum nisi distinctio sit laudantium enim asperiores minima, officiis consequatur quam ipsam earum ullam magni? Adipisci dolores ea voluptatum harum nulla?</p>
+            <p>Voluptate ad saepe, ipsam, commodi nulla officia minus suscipit necessitatibus adipisci, fugit autem odio tempore placeat. Quod, possimus? Vero aliquam iste quidem pariatur eaque iusto laudantium minus obcaecati? A, quaerat?</p>
+
+      </div>
+
+    <!-- SEC 3 -->
+        <div>
+
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsum cum nisi distinctio sit laudantium enim asperiores minima, officiis consequatur quam ipsam earum ullam magni? Adipisci dolores ea voluptatum harum nulla?</p>
+            <p>Voluptate ad saepe, ipsam, commodi nulla officia minus suscipit necessitatibus adipisci, fugit autem odio tempore placeat. Quod, possimus? Vero aliquam iste quidem pariatur eaque iusto laudantium minus obcaecati? A, quaerat?</p>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsum cum nisi distinctio sit laudantium enim asperiores minima, officiis consequatur quam ipsam earum ullam magni? Adipisci dolores ea voluptatum harum nulla?</p>
+            <p>Voluptate ad saepe, ipsam, commodi nulla officia minus suscipit necessitatibus adipisci, fugit autem odio tempore placeat. Quod, possimus? Vero aliquam iste quidem pariatur eaque iusto laudantium minus obcaecati? A, quaerat?</p>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsum cum nisi distinctio sit laudantium enim asperiores minima, officiis consequatur quam ipsam earum ullam magni? Adipisci dolores ea voluptatum harum nulla?</p>
+            <p>Voluptate ad saepe, ipsam, commodi nulla officia minus suscipit necessitatibus adipisci, fugit autem odio tempore placeat. Quod, possimus? Vero aliquam iste quidem pariatur eaque iusto laudantium minus obcaecati? A, quaerat?</p>
+
+      </div>
+
+    <!-- SEC 4 -->
+        <div>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsum cum nisi distinctio sit laudantium enim asperiores minima, officiis consequatur quam ipsam earum ullam magni? Adipisci dolores ea voluptatum harum nulla?</p>
+            <p>Voluptate ad saepe, ipsam, commodi nulla officia minus suscipit necessitatibus adipisci, fugit autem odio tempore placeat. Quod, possimus? Vero aliquam iste quidem pariatur eaque iusto laudantium minus obcaecati? A, quaerat?</p>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsum cum nisi distinctio sit laudantium enim asperiores minima, officiis consequatur quam ipsam earum ullam magni? Adipisci dolores ea voluptatum harum nulla?</p>
+            <p>Voluptate ad saepe, ipsam, commodi nulla officia minus suscipit necessitatibus adipisci, fugit autem odio tempore placeat. Quod, possimus? Vero aliquam iste quidem pariatur eaque iusto laudantium minus obcaecati? A, quaerat?</p>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsum cum nisi distinctio sit laudantium enim asperiores minima, officiis consequatur quam ipsam earum ullam magni? Adipisci dolores ea voluptatum harum nulla?</p>
+            <p>Voluptate ad saepe, ipsam, commodi nulla officia minus suscipit necessitatibus adipisci, fugit autem odio tempore placeat. Quod, possimus? Vero aliquam iste quidem pariatur eaque iusto laudantium minus obcaecati? A, quaerat?</p>
+
+      </div>
+
+    <!-- SEC 5 -->
+        <div>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsum cum nisi distinctio sit laudantium enim asperiores minima, officiis consequatur quam ipsam earum ullam magni? Adipisci dolores ea voluptatum harum nulla?</p>
+            <p>Voluptate ad saepe, ipsam, commodi nulla officia minus suscipit necessitatibus adipisci, fugit autem odio tempore placeat. Quod, possimus? Vero aliquam iste quidem pariatur eaque iusto laudantium minus obcaecati? A, quaerat?</p>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsum cum nisi distinctio sit laudantium enim asperiores minima, officiis consequatur quam ipsam earum ullam magni? Adipisci dolores ea voluptatum harum nulla?</p>
+            <p>Voluptate ad saepe, ipsam, commodi nulla officia minus suscipit necessitatibus adipisci, fugit autem odio tempore placeat. Quod, possimus? Vero aliquam iste quidem pariatur eaque iusto laudantium minus obcaecati? A, quaerat?</p>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsum cum nisi distinctio sit laudantium enim asperiores minima, officiis consequatur quam ipsam earum ullam magni? Adipisci dolores ea voluptatum harum nulla?</p>
+            <p>Voluptate ad saepe, ipsam, commodi nulla officia minus suscipit necessitatibus adipisci, fugit autem odio tempore placeat. Quod, possimus? Vero aliquam iste quidem pariatur eaque iusto laudantium minus obcaecati? A, quaerat?</p>
+
+        </div>
+
+    <!-- SEC 6 -->
+        <div>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsum cum nisi distinctio sit laudantium enim asperiores minima, officiis consequatur quam ipsam earum ullam magni? Adipisci dolores ea voluptatum harum nulla?</p>
+            <p>Voluptate ad saepe, ipsam, commodi nulla officia minus suscipit necessitatibus adipisci, fugit autem odio tempore placeat. Quod, possimus? Vero aliquam iste quidem pariatur eaque iusto laudantium minus obcaecati? A, quaerat?</p>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsum cum nisi distinctio sit laudantium enim asperiores minima, officiis consequatur quam ipsam earum ullam magni? Adipisci dolores ea voluptatum harum nulla?</p>
+            <p>Voluptate ad saepe, ipsam, commodi nulla officia minus suscipit necessitatibus adipisci, fugit autem odio tempore placeat. Quod, possimus? Vero aliquam iste quidem pariatur eaque iusto laudantium minus obcaecati? A, quaerat?</p>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsum cum nisi distinctio sit laudantium enim asperiores minima, officiis consequatur quam ipsam earum ullam magni? Adipisci dolores ea voluptatum harum nulla?</p>
+            <p>Voluptate ad saepe, ipsam, commodi nulla officia minus suscipit necessitatibus adipisci, fugit autem odio tempore placeat. Quod, possimus? Vero aliquam iste quidem pariatur eaque iusto laudantium minus obcaecati? A, quaerat?</p>
+
+      </div>
+
+  </div>
+
+<p style="margin-left:25px;margin-right:25px;opacity:0;">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fuga id dignissimos nisi eligendi perferendis natus. Quam mollitia quas sit voluptate distinctio ea sunt explicabo similique dolor a, error iste. Eaque eligendi perferendis natus. Quam mollitia quas sit voluptate distinctio ea sunt explicabo similique dolor a, error iste. Eaque. eligendi perferendis natus. Quam mollitia quas sit voluptate distinctio ea sunt explicabo similique dolor a, error iste. Eaque..</p>
+
+</div>
+
+
+<script src="scripts/d3v4+jetpack.js"></script>
+<script src="scripts/graph-scroll.js"></script>
+
+<script>
+
+var oldWidth = 0
+function render(){
+
+  if (oldWidth == innerWidth) return
+  oldWidth = innerWidth
+
+  var width = d3.select('#graph').node().offsetWidth,
+      height = innerWidth > 925 ? width : innerHeight * 0.9
+      ;
+
+
+var svg = d3
+            .select('#graph')
+            .html('')
+            .append('svg')
+            .attrs({width: width, height: height})
+            ;
+
+function canvas_clear(){
+
+svg
+    .selectAll("*")
+    .remove();
+}
+
+function sec_1(){  //all the dots together
+
+      canvas_clear();
+
+        svg
+            .append("svg:image")
+            .attr("xlink:href","images/grayscale_woman.jpg")
+            .attr('width', '900')
+            .attr('height', '600')
+            .attr("x", "0")
+            .attr("y", "0")
+            ;
+
+svg
+    .append('text')
+    .attr('class','title')
+    .attr('y', 650)
+    .attr('x', width/2)
+    .attr('opacity','0')
+    .style("text-anchor", "middle" )
+    .text("How did the 2015 earthquake impact daily life in Nepal?")
+    // .transition()
+    // .duration(3000)
+    .attr('opacity','1')
+    ;
+
+function wrap(text, width) {
+  text.each(function() {
+    var text = d3.select(this),
+        words = text.text().split(/\s+/).reverse(),
+        word,
+        line = [],
+        lineNumber = 0,
+        lineHeight = 1.1, // ems
+        x = text.attr("0"),
+        y = text.attr("y"),
+        dy = 0, //parseFloat(text.attr("dy")),
+        tspan = text.text(null)
+                    .append("tspan")
+ //                   .attr("x", 10)
+//                    .attr("x", x)
+                    .attr("x", (+svg.attr("width") - width)/2)
+                    .attr("y", y)
+                    .attr("dy", dy + "em")
+                    ;
+    while (word = words.pop()) {
+      line.push(word);
+      tspan.text(line.join(" "));
+      if (tspan.node().getComputedTextLength() > width) {
+        line.pop();
+        tspan.text(line.join(" "));
+        line = [word];
+        tspan = text
+                    .append("tspan")
+                    //.attr("x", 50)
+                    .attr("x", (+svg.attr("width") - width)/2)
+                    .attr("y", y)
+                    .attr("dy", ++lineNumber * lineHeight + dy + "em")
+                    .text(word)
+                    ;
+      }
+    }
+  });
+}
+
+svg
+    .append('text')
+    .attr('class','subtitle')
+    .attr('y', 700)
+    .text("The April 2015 earthquake in Nepal resulted in the loss of nearly 9,000 lives and damage to more than 800,000 homes, according to the BBC. So how well did people in Nepal manage to recover from this devastating earthquake? A survey conducted by the Nepal government in early 2016 can give us answers to that question.")
+    .call(wrap, 800)
+    ;
+
+svg
+    .append('text')
+    .attr('class','subtitle')
+    .attr('y', 800)
+    .text("The survey answers some basic questions such as how many homes still had their cars, were still able to use the phone and internet to connect with the outside world.")
+    .call(wrap, 800)
+    ;
+
+svg
+    .append('text')
+    .attr('class','subtitle')
+    .attr('y', 850)
+    .text("On the following pages, we use some of the data from the survey to visualise the impact of the earthquake on people's daily lives. We do this by offering a before-and-after comparison. Scroll down to begin.")
+    .call(wrap, 800)
+    ;
+
+
+
+}
+
+//code for iconotype/pictogram charts in d3 taken from https://stackoverflow.com/questions/35579630/how-to-partially-fill-an-svg-element-in-isotype-chart and https://bl.ocks.org/officeofjane/b3e369e60a4c907ebd09673582349bed/818268d157648b6cda042fda05c0aa5051585f5b
+
+function sec_2(){
+
+      canvas_clear();
+
+svg
+    .append('text')
+    .attr('class','title')
+    .attr('y', 20)
+    .attr('x', 15)
+    .attr('opacity','0')
+    .style("text-anchor", "start" )
+    .text("Before the earthquake, 3,707 of the homes surveyed had a four-wheeler for family use.")
+    // .transition()
+    // .duration(3000)
+    .attr('opacity','1')
+    ;
+
+    svg
+    .append('text')
+    .attr('class','title')
+    .attr('y', 50)
+    .attr('x', 15)
+    .attr('opacity','0')
+    .style("text-anchor", "start" )
+    .text("After the earthquake, 403 of them, or around 11%, lost their four-wheelers")
+    .transition()
+    .duration(2500)
+    .attr('opacity','1')
+    ;
+/*
+    svg
+    .append('text')
+    .attr('class','title')
+    .attr('y', 200)
+    .attr('x', width/2)
+    .attr('opacity','0')
+    .style("text-anchor", "middle" )
+    .text("after the earthquake blah blah blah blah blah")
+    .transition()
+    .delay(2400)
+    .duration(1200)
+    .attr('opacity','1')
+    ;
+*/
+
+var margin = {top: 70, right: 15, bottom: 5, left: 15},
+    w = +svg.attr("width") - margin.left - margin.right,
+    h = +svg.attr("height") - margin.top - margin.bottom
+    ;
+
+var svg_left = svg
+        .append("g")
+        .attr("transform", "translate(" + margin.left + "," + margin.top + ")")
+        //.attr("width", w/2)
+        .attr("width", w)
+        .attr("height", h)
+        .attr('id','svg_left')
+        ;
+
+// var svg_right = svg
+//         .append("g")
+//         .attr("transform", "translate(" + (w/2 + margin.left) + "," + margin.top + ")")
+//         .attr("width", w/2)
+//         .attr("height", h)
+//         .attr('id','svg_right')
+//         ;
+
+let numIcons = 100;
+let numAcross = 10;
+let iconPadding = 5;
+//let squareWidth = Math.floor(w/(2*numAcross));
+let squareWidth = 0.9*Math.floor(w/numAcross);
+let iconWidth = squareWidth - iconPadding*2;
+
+// drawIcons(svg_right, 66.6);
+drawIcons(svg_left, 12);
+
+function drawIcons(canvas, percentx){
+
+        // Define the gradient
+        var gradient = canvas.append("svg:defs")
+            .append("svg:linearGradient")
+            .attr("id", "gradient")
+            .attr("y1", "100%")
+            .attr("y2", "0%")
+            .attr("x1", "0%")
+            .attr("x2", "100%")
+            .attr("spreadMethod", "pad");
+
+canvas
+    .append("defs")
+  .append("g")
+  .attr("id", "iconCustom")
+  .append("path")
+  .attr("d","M25.45 3.256a8.462 8.462 0 0 0-8.462 8.463l-1.638 8.55a2.754 2.754 0 0 0-.713-.101H6.52a2.78 2.78 0 0 0-2.78 2.78v2.19a2.782 2.782 0 0 0 2.78 2.782h2.392c-2.246 1.284-3.91 5.867-3.91 11.344 0 .466.026.915.05 1.365-.791.97-1.312 2.553-1.312 4.353v8.18c0 1.874.56 3.517 1.407 4.473v7.441c0 3.498 1.904 6.33 4.248 6.33 2.347 0 4.248-2.832 4.248-6.33v-1.199h72.421v1.197c0 3.496 1.817 6.332 4.053 6.332 2.236 0 4.051-2.836 4.051-6.332v-8.082c.58-.972.943-2.325.943-3.83v-8.18c0-1.845-.543-3.471-1.369-4.433.022-.424.047-.846.047-1.285 0-5.476-1.663-10.06-3.908-11.344h3.066a2.78 2.78 0 0 0 2.78-2.781v-2.192a2.782 2.782 0 0 0-2.782-2.779H84.83c-.367 0-.716.074-1.037.203l-2.275-8.652a8.463 8.463 0 0 0-8.461-8.463zm3.712 2.486h39.86a7.085 7.085 0 0 1 7.083 7.086l3.24 12.315c0 .94.042 1.717.098 2.406h-59.81c.047-.687.084-1.466.084-2.406l2.357-12.315a7.088 7.088 0 0 1 7.088-7.086zM18.846 37.436c2.98 0 5.4 2.419 5.4 5.4a5.402 5.402 0 0 1-10.803 0c0-2.981 2.42-5.4 5.403-5.4zm62.22 0a5.401 5.401 0 0 1 0 10.8 5.4 5.4 0 0 1 0-10.8zm-46.773 3.658h31.121v4.453H34.293zm-7.36 4.453a2.689 2.689 0 1 1 .002 5.378 2.689 2.689 0 0 1-.001-5.378zm46.046 0a2.691 2.691 0 0 1 2.689 2.687 2.693 2.693 0 0 1-2.69 2.69 2.688 2.688 0 1 1 0-5.377zm-59.336 9.83h72.421v.893H13.643z")
+  .attr("transform", "scale(" +  iconWidth / 100 + ")");
+
+  let data = d3.range(numIcons);
+
+  // compute dimensions
+  let nAcross = numAcross;
+  let nDown = Math.ceil(numIcons/nAcross);
+
+//   let squareWidth = iconWidth + iconPadding*1.5;
+//   console.log(squareWidth);
+
+  // width and height of icon area
+  let area_width = nAcross * squareWidth;
+  let area_height = nDown * squareWidth ;
+
+  // clear previously drawn chart
+  d3.select("#icons").remove();
+
+  // append group with specfied dimensions
+  let area = canvas.append("g")
+      .attr("id", "icons")
+      .attr("width", area_width)
+      .attr("height", area_height);
+
+  // draw icons
+  area.selectAll("use")
+      .data(data)
+      .enter()
+      .append("use")
+      .attr("xlink:href", "#iconCustom")
+      .attr("id", function(d) {
+        return "icon"+d;
+      })
+      .attr("x", function(d) { return d%nAcross * squareWidth; })
+      .attr("y", function(d) { return Math.floor(d/nAcross) * squareWidth; })
+    ;
+
+    var datax = { percent: percentx};
+    var valueLit = datax.percent,
+                 //total = numCols * numRows,
+        valuePict = numIcons * (datax.percent / 100),
+        valueDecimal = (valuePict % 1);
+
+ area
+    .selectAll("use")
+    .attr("fill", '#4e4b4a')
+    .transition()
+        .delay(function(d,i){ return i * 80})
+        //.duration(2500)
+        .attr("fill", function (d, i) {
+            if (d < valuePict - 1) {
+                return "rgba(78,75,74,0.1)";
+            } else if (d > (valuePict - 1) && d < (valuePict)){
+        // Define the gradient colors
+                gradient.append("svg:stop")
+                        .attr("offset", "0%")
+                        .attr("stop-color", "rgba(78,75,74,1)")
+                        .attr("stop-opacity", 0.1);
+              gradient.append("svg:stop")
+                .attr("offset", (valueDecimal * 100) + '%')
+                .attr("stop-color", "rgba(78,75,74,1)")
+                .attr("stop-opacity", 0.1);
+                gradient.append("svg:stop")
+                .attr("offset", (valueDecimal * 100) + '%')
+                .attr("stop-color", "rgba(78,75,74,1)")
+                .attr("stop-opacity", 1);
+             gradient.append("svg:stop")
+                .attr("offset", '100%')
+                .attr("stop-color", "rgba(78,75,74,1)")
+                .attr("stop-opacity", 1);
+              return "url(#gradient)";
+            } else {
+                return '#4e4b4a';
+            }
+        })
+         ;
+}
+
+
+}
+
+function sec_3(){
+
+      canvas_clear();
+
+svg
+    .append('text')
+    .attr('class','title')
+    .attr('y', 20)
+    .attr('x', 15)
+    .attr('opacity','0')
+    .style("text-anchor", "start" )
+    .text("Before the earthquake, 62,754 of the homes surveyed had a computer.")
+    // .transition()
+    // .duration(3000)
+    .attr('opacity','1')
+    ;
+
+    svg
+    .append('text')
+    .attr('class','title')
+    .attr('y', 50)
+    .attr('x', 15)
+    .attr('opacity','0')
+    .style("text-anchor", "start" )
+    .text("After the earthquake, 6,890 of them, or around 11%, lost their computers.")
+    .transition()
+    .duration(2500)
+    .attr('opacity','1')
+    ;
+/*
+    svg
+    .append('text')
+    .attr('class','title')
+    .attr('y', 200)
+    .attr('x', width/2)
+    .attr('opacity','0')
+    .style("text-anchor", "middle" )
+    .text("after the earthquake blah blah blah blah blah")
+    .transition()
+    .delay(2400)
+    .duration(1200)
+    .attr('opacity','1')
+    ;
+*/
+
+var margin = {top: 70, right: 15, bottom: 5, left: 15},
+    w = +svg.attr("width") - margin.left - margin.right,
+    h = +svg.attr("height") - margin.top - margin.bottom
+    ;
+
+var svg_left = svg
+        .append("g")
+        .attr("transform", "translate(" + margin.left + "," + margin.top + ")")
+        //.attr("width", w/2)
+        .attr("width", w)
+        .attr("height", h)
+        .attr('id','svg_left')
+        ;
+
+// var svg_right = svg
+//         .append("g")
+//         .attr("transform", "translate(" + (w/2 + margin.left) + "," + margin.top + ")")
+//         .attr("width", w/2)
+//         .attr("height", h)
+//         .attr('id','svg_right')
+//         ;
+
+let numIcons = 100;
+let numAcross = 10;
+let iconPadding = 5;
+//let squareWidth = Math.floor(w/(2*numAcross));
+let squareWidth = 0.9*Math.floor(w/numAcross);
+let iconWidth = squareWidth - iconPadding*2;
+
+// drawIcons(svg_right, 66.6);
+drawIcons(svg_left, 12);
+
+function drawIcons(canvas, percentx){
+
+        // Define the gradient
+        var gradient = canvas.append("svg:defs")
+            .append("svg:linearGradient")
+            .attr("id", "gradient")
+            .attr("y1", "100%")
+            .attr("y2", "0%")
+            .attr("x1", "0%")
+            .attr("x2", "100%")
+            .attr("spreadMethod", "pad");
+
+canvas
+    .append("defs")
+  .append("g")
+  .attr("id", "iconCustom")
+  .append("path")
+  .attr("d","M7.465 1.275c-3.8 0-6.9 3.1-6.9 6.9v33c0 3.8 3 6.9 6.9 6.9h22.5c.5 0 .9.4.9.9v1.6c0 .4.3.7.7.7h8.7c.4 0 .7-.3.7-.7v-1.6c0-.5.4-.9.9-.9h22.5c3.8 0 6.9-3.1 6.9-6.9v-33c0-3.8-3.1-6.9-6.9-6.9zm.9 5h54.9c1.6 0 2.901 1.3 2.901 2.9v31c0 1.6-1.3 2.9-2.9 2.9H8.465c-1.6 0-2.9-1.3-2.9-2.9v-31h-.1c0-1.6 1.3-2.9 2.9-2.9zm-.8 49c-1 0-1.9.6-2.1 1.5l-2.299 13.5c-.2 1.1.8 2 2.1 2h61.298c1.2 0 2.2-.9 2-2l-2.398-13.5c-.2-.9-1.002-1.5-2.102-1.5zm1.9 2.4h3.201c.3 0 .6.2.6.5v1.7c0 .3-.3.5-.6.5H9.465c-.3 0-.6-.2-.6-.5v-1.7c0-.3.3-.5.6-.5zm7.201 0h3.2c.3 0 .599.2.599.5v1.7c0 .3-.3.5-.6.5h-3.199c-.3 0-.602-.2-.602-.5v-1.7c0-.3.302-.5.602-.5zm7 0h3.2c.3 0 .599.2.599.5v1.7c0 .3-.3.5-.6.5h-3.199c-.3 0-.602-.2-.602-.5v-1.7c0-.3.302-.5.602-.5zm7.1 0h3.199c.3 0 .6.2.6.5v1.7c0 .3-.3.5-.6.5h-3.2c-.3 0-.599-.2-.599-.5v-1.7c0-.3.3-.5.6-.5zm7 0h3.199c.3 0 .6.2.6.5v1.7c0 .3-.3.5-.6.5h-3.2c-.3 0-.599-.2-.599-.5v-1.7c0-.3.3-.5.6-.5zm7.1 0h3.198c.3 0 .602.2.602.5v1.7c0 .3-.302.5-.602.5h-3.199c-.3 0-.6-.2-.6-.5v-1.7c0-.3.3-.5.6-.5zm7 0h3.198c.3 0 .602.2.602.5v1.7c0 .3-.302.5-.602.5h-3.199c-.3 0-.6-.2-.6-.5v-1.7c0-.3.3-.5.6-.5zm7.099 0h3.201c.3 0 .6.2.6.5v1.7c0 .3-.3.5-.6.5h-3.201c-.3 0-.6-.2-.6-.5v-1.7c0-.3.3-.5.6-.5zm-49.5 4.7h3.201c.3 0 .6.2.6.5v1.7c0 .3-.3.5-.6.5H9.465c-.3 0-.6-.2-.6-.5v-1.7c0-.3.3-.5.6-.5zm7.201 0h3.2c.3 0 .599.2.599.5v1.7c0 .3-.3.5-.6.5h-3.199c-.3 0-.602-.2-.602-.5v-1.7c0-.3.302-.5.602-.5zm7 0h3.2c.3 0 .599.2.599.5v1.7c0 .3-.3.5-.6.5h-3.199c-.3 0-.602-.2-.602-.5v-1.7c0-.3.302-.5.602-.5zm7.1 0h3.199c.3 0 .6.2.6.5v1.7c0 .3-.3.5-.6.5h-3.2c-.3 0-.599-.2-.599-.5v-1.7c0-.3.3-.5.6-.5zm7 0h3.199c.3 0 .6.2.6.5v1.7c0 .3-.3.5-.6.5h-3.2c-.3 0-.599-.2-.599-.5v-1.7c0-.3.3-.5.6-.5zm7.1 0h3.198c.3 0 .602.2.602.5v1.7c0 .3-.302.5-.602.5h-3.199c-.3 0-.6-.2-.6-.5v-1.7c0-.3.3-.5.6-.5zm7 0h3.198c.3 0 .602.2.602.5v1.7c0 .3-.302.5-.602.5h-3.199c-.3 0-.6-.2-.6-.5v-1.7c0-.3.3-.5.6-.5zm7.099 0h3.201c.3 0 .6.2.6.5v1.7c0 .3-.3.5-.6.5h-3.201c-.3 0-.6-.2-.6-.5v-1.7c0-.3.3-.5.6-.5zm-49.5 4.8h3.201c.3 0 .6.2.6.5v1.7c0 .3-.3.5-.6.5H9.465c-.3 0-.6-.2-.6-.5v-1.7c0-.3.3-.5.6-.5zm7.1 0h24.4c.3 0 .6.2.6.5v1.7c0 .3-.3.5-.6.5h-24.4c-.3 0-.6-.2-.6-.5v-1.7c0-.3.3-.5.6-.5zm28.3 0h3.2c.3 0 .601.2.601.5v1.7c0 .3-.302.5-.602.5h-3.199c-.3 0-.6-.2-.6-.5v-1.7c0-.3.3-.5.6-.5zm7 0h3.2c.3 0 .601.2.601.5v1.7c0 .3-.302.5-.602.5h-3.199c-.3 0-.6-.2-.6-.5v-1.7c0-.3.3-.5.6-.5zm7.1 0h3.201c.3 0 .6.2.6.5v1.7c0 .3-.3.5-.6.5h-3.201c-.3 0-.6-.2-.6-.5v-1.7c0-.3.3-.5.6-.5z")
+  .attr("transform", "scale(" +  iconWidth / 100 + ")");
+
+  let data = d3.range(numIcons);
+
+  // compute dimensions
+  let nAcross = numAcross;
+  let nDown = Math.ceil(numIcons/nAcross);
+
+//   let squareWidth = iconWidth + iconPadding*1.5;
+//   console.log(squareWidth);
+
+  // width and height of icon area
+  let area_width = nAcross * squareWidth;
+  let area_height = nDown * squareWidth ;
+
+  // clear previously drawn chart
+  d3.select("#icons").remove();
+
+  // append group with specfied dimensions
+  let area = canvas.append("g")
+      .attr("id", "icons")
+      .attr("width", area_width)
+      .attr("height", area_height);
+
+  // draw icons
+  area.selectAll("use")
+      .data(data)
+      .enter()
+      .append("use")
+      .attr("xlink:href", "#iconCustom")
+      .attr("id", function(d) {
+        return "icon"+d;
+      })
+      .attr("x", function(d) { return d%nAcross * squareWidth; })
+      .attr("y", function(d) { return Math.floor(d/nAcross) * squareWidth; })
+    ;
+
+    var datax = { percent: percentx};
+    var valueLit = datax.percent,
+                 //total = numCols * numRows,
+        valuePict = numIcons * (datax.percent / 100),
+        valueDecimal = (valuePict % 1);
+
+ area
+    .selectAll("use")
+    .attr("fill", '#4e4b4a')
+    .transition()
+        .delay(function(d,i){ return i * 80})
+        //.duration(2500)
+        .attr("fill", function (d, i) {
+            if (d < valuePict - 1) {
+                return "rgba(78,75,74,0.1)";
+            } else if (d > (valuePict - 1) && d < (valuePict)){
+        // Define the gradient colors
+                gradient.append("svg:stop")
+                        .attr("offset", "0%")
+                        .attr("stop-color", "rgba(78,75,74,1)")
+                        .attr("stop-opacity", 0.1);
+              gradient.append("svg:stop")
+                .attr("offset", (valueDecimal * 100) + '%')
+                .attr("stop-color", "rgba(78,75,74,1)")
+                .attr("stop-opacity", 0.1);
+                gradient.append("svg:stop")
+                .attr("offset", (valueDecimal * 100) + '%')
+                .attr("stop-color", "rgba(78,75,74,1)")
+                .attr("stop-opacity", 1);
+             gradient.append("svg:stop")
+                .attr("offset", '100%')
+                .attr("stop-color", "rgba(78,75,74,1)")
+                .attr("stop-opacity", 1);
+              return "url(#gradient)";
+            } else {
+                return '#4e4b4a';
+            }
+        })
+         ;
+}
+
+
+
+}
+
+
+function sec_4(){
+
+      canvas_clear();
+
+      svg
+    .append('text')
+    .attr('class','title')
+    .attr('y', 20)
+    .attr('x', 15)
+    .attr('opacity','0')
+    .style("text-anchor", "start" )
+    .text("Before the earthquake, 41,241 of the homes surveyed had a landline phone.")
+    // .transition()
+    // .duration(3000)
+    .attr('opacity','1')
+    ;
+
+    svg
+    .append('text')
+    .attr('class','title')
+    .attr('y', 50)
+    .attr('x', 15)
+    .attr('opacity','0')
+    .style("text-anchor", "start" )
+    .text("After the earthquake, 6,028 of them, or around 15%, lost their landline phones.")
+    .transition()
+    .duration(2500)
+    .attr('opacity','1')
+    ;
+/*
+    svg
+    .append('text')
+    .attr('class','title')
+    .attr('y', 200)
+    .attr('x', width/2)
+    .attr('opacity','0')
+    .style("text-anchor", "middle" )
+    .text("after the earthquake blah blah blah blah blah")
+    .transition()
+    .delay(2400)
+    .duration(1200)
+    .attr('opacity','1')
+    ;
+*/
+
+var margin = {top: 70, right: 15, bottom: 5, left: 15},
+    w = +svg.attr("width") - margin.left - margin.right,
+    h = +svg.attr("height") - margin.top - margin.bottom
+    ;
+
+var svg_left = svg
+        .append("g")
+        .attr("transform", "translate(" + margin.left + "," + margin.top + ")")
+        //.attr("width", w/2)
+        .attr("width", w)
+        .attr("height", h)
+        .attr('id','svg_left')
+        ;
+
+// var svg_right = svg
+//         .append("g")
+//         .attr("transform", "translate(" + (w/2 + margin.left) + "," + margin.top + ")")
+//         .attr("width", w/2)
+//         .attr("height", h)
+//         .attr('id','svg_right')
+//         ;
+
+let numIcons = 100;
+let numAcross = 10;
+let iconPadding = 5;
+//let squareWidth = Math.floor(w/(2*numAcross));
+let squareWidth = 0.9*Math.floor(w/numAcross);
+let iconWidth = squareWidth - iconPadding*2;
+
+// drawIcons(svg_right, 66.6);
+drawIcons(svg_left, 16);
+
+function drawIcons(canvas, percentx){
+
+        // Define the gradient
+        var gradient = canvas.append("svg:defs")
+            .append("svg:linearGradient")
+            .attr("id", "gradient")
+            .attr("y1", "100%")
+            .attr("y2", "0%")
+            .attr("x1", "0%")
+            .attr("x2", "100%")
+            .attr("spreadMethod", "pad");
+
+canvas
+    .append("defs")
+  .append("g")
+  .attr("id", "iconCustom")
+  .append("path")
+  .attr("d","M3.047 18H1s-.864 0-.991-7.5C-.12 3 1 3 1 3h2.047c.268-1 1.6-1 1.6-1h2.706s1.332 0 1.6 1H20.75S22 3 22 10.5 20.75 18 20.75 18H8.952c-.268 1-1.6 1-1.6 1H4.647s-1.332 0-1.6-1zM3 17H1.6s-.6.31-.6-6.5.6-6.5.6-6.5H3zm6 0h11.22s.804 0 .804-6.5S20.22 4 20.22 4H9zm9-1a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm6-3a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm7-4a1 1 0 1 0-2 0 1 1 0 0 0 2 0zm-4 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-.833-5c-.092 0-.167.069-.167.154v1.692c0 .085.074.154.167.154h7.666c.092 0 .167-.069.167-.154V5.154c0-.085-.074-.154-.167-.154zM4.788 3S4 3 4 3.764v13.472c0 .764.788.764.788.764h2.424S8 18 8 17.236V3.764C8 3 7.212 3 7.212 3z")
+  .attr("transform", "scale(" +  iconWidth / 25 + ")");
+
+  let data = d3.range(numIcons);
+
+  // compute dimensions
+  let nAcross = numAcross;
+  let nDown = Math.ceil(numIcons/nAcross);
+
+//   let squareWidth = iconWidth + iconPadding*1.5;
+//   console.log(squareWidth);
+
+  // width and height of icon area
+  let area_width = nAcross * squareWidth;
+  let area_height = nDown * squareWidth ;
+
+  // clear previously drawn chart
+  d3.select("#icons").remove();
+
+  // append group with specfied dimensions
+  let area = canvas.append("g")
+      .attr("id", "icons")
+      .attr("width", area_width)
+      .attr("height", area_height);
+
+  // draw icons
+  area.selectAll("use")
+      .data(data)
+      .enter()
+      .append("use")
+      .attr("xlink:href", "#iconCustom")
+      .attr("id", function(d) {
+        return "icon"+d;
+      })
+      .attr("x", function(d) { return d%nAcross * squareWidth; })
+      .attr("y", function(d) { return Math.floor(d/nAcross) * squareWidth; })
+    ;
+
+    var datax = { percent: percentx};
+    var valueLit = datax.percent,
+                 //total = numCols * numRows,
+        valuePict = numIcons * (datax.percent / 100),
+        valueDecimal = (valuePict % 1);
+
+ area
+    .selectAll("use")
+    .attr("fill", '#4e4b4a')
+    .transition()
+        .delay(function(d,i){ return i * 80})
+        //.duration(2500)
+        .attr("fill", function (d, i) {
+            if (d < valuePict - 1) {
+                return "rgba(78,75,74,0.1)";
+            } else if (d > (valuePict - 1) && d < (valuePict)){
+        // Define the gradient colors
+                gradient.append("svg:stop")
+                        .attr("offset", "0%")
+                        .attr("stop-color", "rgba(78,75,74,1)")
+                        .attr("stop-opacity", 0.1);
+              gradient.append("svg:stop")
+                .attr("offset", (valueDecimal * 100) + '%')
+                .attr("stop-color", "rgba(78,75,74,1)")
+                .attr("stop-opacity", 0.1);
+                gradient.append("svg:stop")
+                .attr("offset", (valueDecimal * 100) + '%')
+                .attr("stop-color", "rgba(78,75,74,1)")
+                .attr("stop-opacity", 1);
+             gradient.append("svg:stop")
+                .attr("offset", '100%')
+                .attr("stop-color", "rgba(78,75,74,1)")
+                .attr("stop-opacity", 1);
+              return "url(#gradient)";
+            } else {
+                return '#4e4b4a';
+            }
+        })
+         ;
+}
+
+
+
+}
+
+
+
+function sec_5(){
+
+      canvas_clear();
+
+
+      svg
+    .append('text')
+    .attr('class','title')
+    .attr('y', 20)
+    .attr('x', 15)
+    .attr('opacity','0')
+    .style("text-anchor", "start" )
+    .text("Before the earthquake, 354,292 of the homes surveyed had a television.")
+    // .transition()
+    // .duration(3000)
+    .attr('opacity','1')
+    ;
+
+    svg
+    .append('text')
+    .attr('class','title')
+    .attr('y', 50)
+    .attr('x', 15)
+    .attr('opacity','0')
+    .style("text-anchor", "start" )
+    .text("After the earthquake, 42,169 of those homes, or around 12%, lost their TVs.")
+    .transition()
+    .duration(2500)
+    .attr('opacity','1')
+    ;
+/*
+    svg
+    .append('text')
+    .attr('class','title')
+    .attr('y', 200)
+    .attr('x', width/2)
+    .attr('opacity','0')
+    .style("text-anchor", "middle" )
+    .text("after the earthquake blah blah blah blah blah")
+    .transition()
+    .delay(2400)
+    .duration(1200)
+    .attr('opacity','1')
+    ;
+*/
+
+var margin = {top: 70, right: 15, bottom: 5, left: 15},
+    w = +svg.attr("width") - margin.left - margin.right,
+    h = +svg.attr("height") - margin.top - margin.bottom
+    ;
+
+var svg_left = svg
+        .append("g")
+        .attr("transform", "translate(" + margin.left + "," + margin.top + ")")
+        //.attr("width", w/2)
+        .attr("width", w)
+        .attr("height", h)
+        .attr('id','svg_left')
+        ;
+
+// var svg_right = svg
+//         .append("g")
+//         .attr("transform", "translate(" + (w/2 + margin.left) + "," + margin.top + ")")
+//         .attr("width", w/2)
+//         .attr("height", h)
+//         .attr('id','svg_right')
+//         ;
+
+let numIcons = 100;
+let numAcross = 10;
+let iconPadding = 5;
+//let squareWidth = Math.floor(w/(2*numAcross));
+let squareWidth = 0.9*Math.floor(w/numAcross);
+let iconWidth = squareWidth - iconPadding*2;
+
+// drawIcons(svg_right, 66.6);
+drawIcons(svg_left, 13);
+
+function drawIcons(canvas, percentx){
+
+        // Define the gradient
+        var gradient = canvas.append("svg:defs")
+            .append("svg:linearGradient")
+            .attr("id", "gradient")
+            .attr("y1", "100%")
+            .attr("y2", "0%")
+            .attr("x1", "0%")
+            .attr("x2", "100%")
+            .attr("spreadMethod", "pad");
+
+canvas
+    .append("defs")
+  .append("g")
+  .attr("id", "iconCustom")
+  .append("path")
+  .attr("d","M8.459.232a.615.615 0 0 0-.436.178.623.623 0 0 0 0 .874l1.56 1.56a5.347 5.347 0 0 0-1.72.795H4.849C2.334 3.639.27 5.702.27 8.216v7.646c0 2.355 1.826 4.313 4.128 4.551v.53a.712.712 0 0 0 .714.714h.45a.711.711 0 0 0 .714-.715v-.502H16.41v.343c0 .397.317.715.714.715h.45a.712.712 0 0 0 .714-.715v-.343c2.487-.053 4.498-2.09 4.498-4.578V8.216c0-2.514-2.063-4.577-4.577-4.577h-4.128a5.389 5.389 0 0 0-1.72-.794l1.561-1.561a.623.623 0 0 0 0-.874.623.623 0 0 0-.872 0l-2.09 2.064L8.895.41a.615.615 0 0 0-.437-.178zM5.297 5.438H15.59c1.799 0 3.28 1.481 3.28 3.28v6.695c0 1.799-1.481 3.28-3.28 3.28H5.297c-1.799 0-3.28-1.481-3.28-3.28V8.719c0-1.8 1.481-3.281 3.28-3.281zm.132.873c-1.005.08-2.301.555-2.672 2.38-.08.318.318.477.503.24.503-.662 1.27-1.482 2.328-2.064a.298.298 0 0 0-.158-.556zm15.4 3.148a.7.7 0 0 1 .687.688.7.7 0 0 1-.688.688.7.7 0 0 1-.688-.688.7.7 0 0 1 .688-.688zm0 1.905a.7.7 0 0 1 .687.688c0 .397-.317.715-.688.688a.7.7 0 0 1-.688-.688.7.7 0 0 1 .688-.688zm0 1.905a.7.7 0 0 1 .687.688.683.683 0 0 1-.688.688.7.7 0 0 1-.688-.688.7.7 0 0 1 .688-.688z")
+  .attr("transform", "scale(" +  iconWidth / 30 + ")");
+
+  let data = d3.range(numIcons);
+
+  // compute dimensions
+  let nAcross = numAcross;
+  let nDown = Math.ceil(numIcons/nAcross);
+
+//   let squareWidth = iconWidth + iconPadding*1.5;
+//   console.log(squareWidth);
+
+  // width and height of icon area
+  let area_width = nAcross * squareWidth;
+  let area_height = nDown * squareWidth ;
+
+  // clear previously drawn chart
+  d3.select("#icons").remove();
+
+  // append group with specfied dimensions
+  let area = canvas.append("g")
+      .attr("id", "icons")
+      .attr("width", area_width)
+      .attr("height", area_height);
+
+  // draw icons
+  area.selectAll("use")
+      .data(data)
+      .enter()
+      .append("use")
+      .attr("xlink:href", "#iconCustom")
+      .attr("id", function(d) {
+        return "icon"+d;
+      })
+      .attr("x", function(d) { return d%nAcross * squareWidth; })
+      .attr("y", function(d) { return Math.floor(d/nAcross) * squareWidth; })
+    ;
+
+    var datax = { percent: percentx};
+    var valueLit = datax.percent,
+                 //total = numCols * numRows,
+        valuePict = numIcons * (datax.percent / 100),
+        valueDecimal = (valuePict % 1);
+
+ area
+    .selectAll("use")
+    .attr("fill", '#4e4b4a')
+    .transition()
+        .delay(function(d,i){ return i * 80})
+        //.duration(2500)
+        .attr("fill", function (d, i) {
+            if (d < valuePict - 1) {
+                return "rgba(78,75,74,0.1)";
+            } else if (d > (valuePict - 1) && d < (valuePict)){
+        // Define the gradient colors
+                gradient.append("svg:stop")
+                        .attr("offset", "0%")
+                        .attr("stop-color", "rgba(78,75,74,1)")
+                        .attr("stop-opacity", 0.1);
+              gradient.append("svg:stop")
+                .attr("offset", (valueDecimal * 100) + '%')
+                .attr("stop-color", "rgba(78,75,74,1)")
+                .attr("stop-opacity", 0.1);
+                gradient.append("svg:stop")
+                .attr("offset", (valueDecimal * 100) + '%')
+                .attr("stop-color", "rgba(78,75,74,1)")
+                .attr("stop-opacity", 1);
+             gradient.append("svg:stop")
+                .attr("offset", '100%')
+                .attr("stop-color", "rgba(78,75,74,1)")
+                .attr("stop-opacity", 1);
+              return "url(#gradient)";
+            } else {
+                return '#4e4b4a';
+            }
+        })
+         ;
+}
+
+
+
+}
+
+
+function sec_6(){
+
+         canvas_clear();
+
+               svg
+    .append('text')
+    .attr('class','title')
+    .attr('y', 20)
+    .attr('x', 15)
+    .attr('opacity','0')
+    .style("text-anchor", "start" )
+    .text("Before the earthquake, 313,677 of the homes surveyed had access to cable TV.")
+    // .transition()
+    // .duration(3000)
+    .attr('opacity','1')
+    ;
+
+    svg
+    .append('text')
+    .attr('class','title')
+    .attr('y', 50)
+    .attr('x', 15)
+    .attr('opacity','0')
+    .style("text-anchor", "start" )
+    .text("After the earthquake, 27,807 of them, or around 9%, lost access to cable TV.")
+    .transition()
+    .duration(2500)
+    .attr('opacity','1')
+    ;
+/*
+    svg
+    .append('text')
+    .attr('class','title')
+    .attr('y', 200)
+    .attr('x', width/2)
+    .attr('opacity','0')
+    .style("text-anchor", "middle" )
+    .text("after the earthquake blah blah blah blah blah")
+    .transition()
+    .delay(2400)
+    .duration(1200)
+    .attr('opacity','1')
+    ;
+*/
+
+var margin = {top: 70, right: 15, bottom: 5, left: 15},
+    w = +svg.attr("width") - margin.left - margin.right,
+    h = +svg.attr("height") - margin.top - margin.bottom
+    ;
+
+var svg_left = svg
+        .append("g")
+        .attr("transform", "translate(" + margin.left + "," + margin.top + ")")
+        //.attr("width", w/2)
+        .attr("width", w)
+        .attr("height", h)
+        .attr('id','svg_left')
+        ;
+
+// var svg_right = svg
+//         .append("g")
+//         .attr("transform", "translate(" + (w/2 + margin.left) + "," + margin.top + ")")
+//         .attr("width", w/2)
+//         .attr("height", h)
+//         .attr('id','svg_right')
+//         ;
+
+let numIcons = 100;
+let numAcross = 10;
+let iconPadding = 5;
+//let squareWidth = Math.floor(w/(2*numAcross));
+let squareWidth = 0.9*Math.floor(w/numAcross);
+let iconWidth = squareWidth - iconPadding*2;
+
+// drawIcons(svg_right, 66.6);
+drawIcons(svg_left, 10);
+
+function drawIcons(canvas, percentx){
+
+        // Define the gradient
+        var gradient = canvas.append("svg:defs")
+            .append("svg:linearGradient")
+            .attr("id", "gradient")
+            .attr("y1", "100%")
+            .attr("y2", "0%")
+            .attr("x1", "0%")
+            .attr("x2", "100%")
+            .attr("spreadMethod", "pad");
+
+canvas
+    .append("defs")
+  .append("g")
+  .attr("id", "iconCustom")
+  .append("path")
+//  .attr("d","M3.047 18H1s-.864 0-.991-7.5C-.12 3 1 3 1 3h2.047c.268-1 1.6-1 1.6-1h2.706s1.332 0 1.6 1H20.75S22 3 22 10.5 20.75 18 20.75 18H8.952c-.268 1-1.6 1-1.6 1H4.647s-1.332 0-1.6-1zM3 17H1.6s-.6.31-.6-6.5.6-6.5.6-6.5H3zm6 0h11.22s.804 0 .804-6.5S20.22 4 20.22 4H9zm9-1a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm6-3a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm7-4a1 1 0 1 0-2 0 1 1 0 0 0 2 0zm-4 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-.833-5c-.092 0-.167.069-.167.154v1.692c0 .085.074.154.167.154h7.666c.092 0 .167-.069.167-.154V5.154c0-.085-.074-.154-.167-.154zM4.788 3S4 3 4 3.764v13.472c0 .764.788.764.788.764h2.424S8 18 8 17.236V3.764C8 3 7.212 3 7.212 3z")
+.attr("d","M1.427.651v5h22v-5zm1.5 1h5a.5.5 0 0 1 .5.5v2c0 .238-.173.422-.406.47-.034.01-.06.03-.094.03h-5c-.034 0-.06-.024-.094-.03h-.062a.491.491 0 0 1-.344-.47v-2a.5.5 0 0 1 .5-.5zm.5 1v1h4v-1zm21 0v3h1v-3zm-10.5 1a.5.5 0 1 1 0 1 .5.5 0 0 1 0-1zm2 0a.5.5 0 1 1 0 1 .5.5 0 0 1 0-1zm2 0a.5.5 0 1 1 0 1 .5.5 0 0 1 0-1zm1.5 0h2v1h-2zm7 0v1h1c.563 0 1 .438 1 1v4c0 .563-.437 1-1 1h-25c-1.1 0-2 .901-2 2v3c0 1.1.9 2 2 2h17.5v-1h-17.5c-.563 0-1-.437-1-1v-3c0-.562.437-1 1-1h25c1.1 0 2-.9 2-2v-4c0-1.099-.9-2-2-2zm-3.5 11v5h3v-5zm-2 1v3h1v-3zm6 0v1h2c.676.01.676-1.01 0-1zm0 2v1h2c.676.01.676-1.01 0-1z")
+  .attr("transform", "scale(" +  iconWidth / 35 + ")");
+
+  let data = d3.range(numIcons);
+
+  // compute dimensions
+  let nAcross = numAcross;
+  let nDown = Math.ceil(numIcons/nAcross);
+
+//   let squareWidth = iconWidth + iconPadding*1.5;
+//   console.log(squareWidth);
+
+  // width and height of icon area
+  let area_width = nAcross * squareWidth;
+  let area_height = nDown * squareWidth ;
+
+  // clear previously drawn chart
+  d3.select("#icons").remove();
+
+  // append group with specfied dimensions
+  let area = canvas.append("g")
+      .attr("id", "icons")
+      .attr("width", area_width)
+      .attr("height", area_height);
+
+  // draw icons
+  area.selectAll("use")
+      .data(data)
+      .enter()
+      .append("use")
+      .attr("xlink:href", "#iconCustom")
+      .attr("id", function(d) {
+        return "icon"+d;
+      })
+      .attr("x", function(d) { return d%nAcross * squareWidth; })
+      .attr("y", function(d) { return Math.floor(d/nAcross) * squareWidth; })
+    ;
+
+    var datax = { percent: percentx};
+    var valueLit = datax.percent,
+                 //total = numCols * numRows,
+        valuePict = numIcons * (datax.percent / 100),
+        valueDecimal = (valuePict % 1);
+
+ area
+    .selectAll("use")
+    .attr("fill", '#4e4b4a')
+    .transition()
+        .delay(function(d,i){ return i * 100})
+        //.duration(2500)
+        .attr("fill", function (d, i) {
+            if (d < valuePict - 1) {
+                return "rgba(78,75,74,0.1)";
+            } else if (d > (valuePict - 1) && d < (valuePict)){
+        // Define the gradient colors
+                gradient.append("svg:stop")
+                        .attr("offset", "0%")
+                        .attr("stop-color", "rgba(78,75,74,1)")
+                        .attr("stop-opacity", 0.1);
+              gradient.append("svg:stop")
+                .attr("offset", (valueDecimal * 100) + '%')
+                .attr("stop-color", "rgba(78,75,74,1)")
+                .attr("stop-opacity", 0.1);
+                gradient.append("svg:stop")
+                .attr("offset", (valueDecimal * 100) + '%')
+                .attr("stop-color", "rgba(78,75,74,1)")
+                .attr("stop-opacity", 1);
+             gradient.append("svg:stop")
+                .attr("offset", '100%')
+                .attr("stop-color", "rgba(78,75,74,1)")
+                .attr("stop-opacity", 1);
+              return "url(#gradient)";
+            } else {
+                return '#4e4b4a';
+            }
+        })
+         ;
+}
+
+
+}
+
+
+
+  var gs = d3.graphScroll()
+      .container(d3.select('#container'))
+      .graph(d3.selectAll('#graph'))
+      .sections(d3.selectAll('#sections > div'))
+      // .offset(innerWidth < 900 ? innerHeight - 30 : 200)
+      .eventId('uniqueId1')
+      .on('active', function(i){
+
+              [
+                sec_1,
+                sec_2,
+                sec_3,
+                sec_4,
+                sec_5,
+                sec_6
+                       ][i]();
+
+})
+
+//the brace above is completed by the brace appearing before the list of function names
+
+}
+//this is the brace that closes the render function
+
+render()
+d3.select(window).on('resize', render)
+
+</script>
+
+</body>
+
+</html>
